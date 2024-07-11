@@ -31,7 +31,7 @@ if ingredients_list:
     VALUES ('{ingredients_string}', '{name_on_order}')
     """
     st.subheader(ingredients_string,name_on_order + 'Nutrition Information')
-    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" ingredients_string, name_on_order)
+    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" (ingredients_string,name_on_order))
     fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=True)
     st.write(my_insert_stmt)
     
